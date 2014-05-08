@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestAuth</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user.present? %>
+  <p>Hey <%= current_user.email %>, welcome back.</p>
+  <p><%= link_to 'Logout?', sessions_path, method: :delete %></p>
+<% end %>
+
+<% flash.each do |key, msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
