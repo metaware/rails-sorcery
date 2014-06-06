@@ -13,6 +13,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def confirm
+    user = User.find_by_confirmation_token(params[:token])
+    if user.present?
+      user.send(:activate!)
+      redirect_to :root, notice: 'User account was successfully updated'
+    else
+      redirect_to :root, notice: 'Invalid confirmation link/token'
+    end
+  end
+
   def user_params
     params.require(:user).permit(:email, :password)
   end

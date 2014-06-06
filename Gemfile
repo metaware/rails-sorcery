@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 
 gem 'sorcery'
 gem 'pry'
+gem 'letter_opener'
+gem 'sendgrid'
+gem 'delayed_job_active_record'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

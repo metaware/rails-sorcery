@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :posts
-  resource :users
+  resource :users do
+    collection do
+      get 'confirmation/:token' => 'users#confirm'
+    end
+  end
+
   resource :sessions
 
   root to: 'posts#index'

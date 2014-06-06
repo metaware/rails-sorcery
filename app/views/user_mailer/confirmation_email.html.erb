@@ -1,0 +1,12 @@
+<p>hey <%= @user.email %>,</p>
+
+<p>
+  thanks for signing up. Please visit the following link to confirm your account:
+</p>
+
+<p><a href="http://localhost:3000/users/confirmation/<%= @user.confirmation_token %>">Click here to confirm</a></p>
+
+<p>
+Thanks,
+Test App Team
+</p>

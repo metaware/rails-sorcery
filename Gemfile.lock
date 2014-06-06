@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bcrypt-ruby (3.1.5)
@@ -40,6 +41,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    delayed_job (4.0.1)
+      activesupport (>= 3.0, < 4.2)
+    delayed_job_active_record (4.0.1)
+      activerecord (>= 3.0, < 4.2)
+      delayed_job (>= 3.0, < 4.1)
     erubis (2.7.0)
     execjs (2.0.2)
     faraday (0.9.0)
@@ -55,6 +61,10 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -106,6 +116,8 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    sendgrid (1.2.0)
+      json
     slop (3.5.0)
     sorcery (0.8.5)
       bcrypt-ruby (>= 3.0)
@@ -141,12 +153,15 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  delayed_job_active_record
   jbuilder (~> 2.0)
   jquery-rails
+  letter_opener
   pry
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  sendgrid
   sorcery
   spring
   sqlite3
